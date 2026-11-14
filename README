@@ -1,0 +1,4 @@
+This is Ryan Wang's Homework Assignment for CSE241:
+There is a make file that can be found in the capacity directory. 
+Call make run in the ryw229wang directory for this to code to run or the java command.
+Recompilation can be done using Javac *.java but you must be in the Capacity folder for this command to work.
