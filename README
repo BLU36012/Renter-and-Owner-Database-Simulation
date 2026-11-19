@@ -1,4 +1,24 @@
-This is Ryan Wang's Homework Assignment for CSE241:
-There is a make file that can be found in the capacity directory. 
-Call make run in the ryw229wang directory for this to code to run or the java command.
-Recompilation can be done using Javac *.java but you must be in the Capacity folder for this command to work.
+LU Uncommons: Rental Property Management Database
+
+RUN THE PROGRAM
+java -jar ryw229.jar
+OOOORRRRRRRRRR
+make run (while in Renter-and-Owner-Database-Simulation directory)
+
+Login Information for the program:
+User: ryw229
+Passowrd: You guys said you would change the password, so no password for you here, plus I am not giving you my gmail password.
+
+TEST DATA
+- Property manager: properties 1-5. Options 8 and 9 list every tenant and every property. This was done to make it easier to find tenants and properties for testing.
+- Layla Sato with ID 30 owes about $10,000. Use her for "Check amount due" and payments.
+- Tenants 41-55 are prospects with no lease. Prospective tenant 41 has toured unit 5-205, so you can sign a lease for her from property 5.
+- Lease 3 (tenant 5, unit 1-201) has a move-out date set but not completed.
+
+COMPANY MANAGER TESTS
+- Add a property with 3 apartments. They are numbered 101-103.
+- Add 2 apartments to property 5. They are numbered 206-207.
+
+FINANCIAL MANAGER TESTS
+- Run each report. Outstanding balances lists Layla Sato (lease 37) first.
+- Pay as tenant 30, then rerun the reports. The totals go up and her balance goes down.

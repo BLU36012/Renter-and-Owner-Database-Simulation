@@ -1,18 +1,23 @@
-JCC = javac
-JFLAGS = -cp ojdbc11.jar -d .
+SRC_DIR  := $(firstword $(wildcard ryw229) LUUncommons)
+SOURCES  := $(wildcard $(SRC_DIR)/*.java)
+BUILD    := build
+JAR      := ryw229.jar
 
-JAR = jar
-JARFLAGS = cfmv
+JC       := javac
+JFLAGS   := --release 11 -d $(BUILD)
 
-all: Capacity.jar
-Capacity.jar: Capacity.class Manifest.txt
-	$(JAR) $(JARFLAGS) Capacity.jar Manifest.txt Capacity.class
-Capacity.class: Capacity/Capacity.java
-	$(JCC) $(JFLAGS) Capacity/Capacity.java
+all: $(JAR)
 
-run: Capacity.jar
-	java -jar Capacity.jar
+$(JAR): $(SOURCES) Manifest.txt
+	rm -rf $(BUILD)
+	mkdir -p $(BUILD)
+	$(JC) $(JFLAGS) $(SOURCES)
+	jar cfm $(JAR) Manifest.txt -C $(BUILD) .
+
+run: $(JAR)
+	java -jar $(JAR)
 
 clean:
-	rm -f Capacity.class Capacity.jar
-	
+	rm -rf $(BUILD) $(JAR) *.class $(SRC_DIR)/*.class
+
+.PHONY: all run clean
